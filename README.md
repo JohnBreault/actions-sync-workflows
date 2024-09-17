@@ -1,0 +1,2 @@
+# actions-sync-workflows
+Some simple workflows to automate the [GitHub Actions-Sync tool](https://github.com/actions/actions-sync) to pull in public GitHub Actions into a GitHub Enterprise Server instance that doesn't have GitHub Connect enabled

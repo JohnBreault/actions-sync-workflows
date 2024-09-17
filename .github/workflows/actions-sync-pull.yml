@@ -1,0 +1,43 @@
+name: actions-sync-tool pull
+
+on:
+  workflow_dispatch:
+  push:
+  #schedule:
+    #- cron: '0 0 * * *'
+
+jobs:
+  actions-sync-pull:
+    runs-on: Linux
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: setup
+        run: |
+          LATEST_RELEASE_URL="https://github.com/actions/actions-sync/releases/latest"
+          TAG=$(curl -Ls -o /dev/null -w %{url_effective} $LATEST_RELEASE_URL)
+          RELEASE_VERSION=$(basename $TAG)
+          FILE_VERSION=$(echo $RELEASE_VERSION | sed 's/^v//')
+          DOWNLOAD_URL=https://github.com/actions/actions-sync/releases/download/$RELEASE_VERSION/actions.actions-sync_"$FILE_VERSION"_linux_amd64.tar.gz
+          wget $DOWNLOAD_URL -O actions-sync.tar.gz
+          tar -xzf actions-sync.tar.gz
+      - name: sync repos locally
+        run: |
+            mkdir -p cache
+            ./bin/actions-sync pull \
+            --cache-dir cache \
+            --repo-name-list-file "repo-name-list.txt"
+      - name: Tar cache directory
+        run: tar -czf cache.tar.gz cache
+      - name: Upload cache
+        uses: actions/upload-artifact@v3
+        with:
+          name: Repo cache and actions-sync tool artifact
+          path: |
+            cache.tar.gz
+            actions-sync.tar.gz
+      - name: Cleanup directory
+        run: |
+          rm -rdf ./*
+          
+

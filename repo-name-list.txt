@@ -1,0 +1,17 @@
+actions/toolkit
+azure/aks-set-context:actions/aks-set-context
+azure/arm-deploy:actions/arm-deploy
+azure/bicep-build-action:actions/bicep-build-action
+azure/cli:actions/cli
+azure/deployment-what-if-action:actions/deployment-what-if-action
+azure/k8s-artifact-substitute:actions/k8s-artifact-substitute
+azure/k8s-bake:actions/k8s-bake
+azure/k8s-create-secret:actions/k8s-create-secret
+azure/k8s-deploy:actions/k8s-deploy
+azure/k8s-set-context:actions/k8s-set-context
+azure/login:actions/login
+azure/powershell:actions/powershell
+lakuapik/gh-actions-http-status:actions/gh-actions-http-status
+microsoft/powerplatform-actions:actions/powerplatform-actions
+microsoft/setup-msbuild:actions/setup-msbuild
+peter-murray/github-security-report-action:actions/github-security-report-action
