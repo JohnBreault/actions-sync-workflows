@@ -55,7 +55,7 @@ This workflow creates a workflow artifact of the repositories listed in [repo-na
    ./actions-sync push \
     --cache-dir "../../cache" \
     --destination-token "<your-GHES-personal-access-token>" \
-    --destination-url "<your-GHES-repo-url/azure/powershell"
+    --destination-url "<your-GHES-repo-url"
 
 
 ## License
@@ -65,7 +65,11 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## References
 
 [^1]: [GitHub Actions-Sync tool](https://github.com/actions/actions-sync)
+
 [^2]: [creating a personal access token](https://docs.github.com/en/enterprise-server@latest/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic)
+
 [^3]: [creating secrets for a repository](https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)
+
 [^4]: [managing your role in an organization owned by your enterprise](https://docs.github.com/en/enterprise-server@3.14/admin/managing-accounts-and-repositories/managing-organizations-in-your-enterprise/managing-your-role-in-an-organization-owned-by-your-enterprise#managing-your-role-with-the-enterprise-settings)
+
 [^5]: [Downloading workflow artifacts](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/downloading-workflow-artifacts)
