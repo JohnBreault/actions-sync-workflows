@@ -1,0 +1,7 @@
+# This workflow will be used in conjunction with the actions-sync-pull workflow to sync Actions from github.com to your OFFLINE GHES instance.
+# Steps:
+# 1. Run the actions-sync-pull workflow from a machine with access to github.com.
+# 2. Actions-sync-pull will create a cache of the Actions and the actions-sync tool.
+# 3. Download the cache from the actions-sync-pull workflow and transfer it to the machine with access to your GHES instance.
+# 4. Copy this workflow to the .github/workflows directory of the offline GHES instance.
+# 5. extract the "repo cache and actions-sync tool artifact.zip" from the cache.
